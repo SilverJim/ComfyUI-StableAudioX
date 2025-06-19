@@ -13,15 +13,44 @@ A powerful audio generation extension for ComfyUI that integrates AudioX models 
 
 ## 🚀 Installation
 
-### 1. Clone Repository
+### 1. System Dependencies (Required)
+**Install these system dependencies first:**
+
+**Windows:**
+```bash
+# Install ffmpeg (required for video processing)
+# Download from: https://ffmpeg.org/download.html
+# Or use chocolatey: choco install ffmpeg
+
+# Install Microsoft Visual C++ Build Tools (if not already installed)
+# Download from: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+```
+
+**Linux/Ubuntu:**
+```bash
+sudo apt update
+sudo apt install ffmpeg libsndfile1-dev build-essential
+```
+
+**macOS:**
+```bash
+brew install ffmpeg libsndfile
+```
+
+### 2. Clone Repository and Install Python Dependencies
 ```bash
 cd ComfyUI/custom_nodes
 git clone https://github.com/lum3on/ComfyUI-StableAudioX.git
 cd ComfyUI-StableAudioX
+
+# Install Python dependencies
 pip install -r requirements.txt
+
+# Optional: Run dependency checker to verify installation
+python install_dependencies.py
 ```
 
-### 2. Download Models
+### 3. Download Models
 **Important**: You must download the AudioX model and config files manually from Hugging Face:
 
 #### Stable Audio Open 1.0 (Recommended)
@@ -197,21 +226,35 @@ The repository includes example workflows:
 
 ### Common Issues
 
+**Installation Problems**:
+- **Missing ffmpeg**: Install ffmpeg system dependency (see installation steps above)
+- **Build errors on Windows**: Install Microsoft Visual C++ Build Tools
+- **Package conflicts**: Use a fresh virtual environment: `python -m venv audiox_env && audiox_env\Scripts\activate`
+- **Dependency failures**: Run `python install_dependencies.py` to check and install missing packages
+
 **Model Not Found**: If AudioX Model Loader shows no models:
 - Ensure model files are in `ComfyUI/models/diffusion_models/`
-- Verify both model file and `config.json` are present
+- Verify both model file and `model_config.json` are present
 - Check file permissions and naming
+- Accept the license agreement on Hugging Face before downloading
 
 **Frontend Errors**: If you encounter "beforeQueued" errors:
 - Refresh browser (Ctrl+R)
 - Clear browser cache
 - Restart ComfyUI
+- Check ComfyUI console for dependency errors
 
 **Memory Issues**: For VRAM/RAM problems:
 - Reduce batch sizes and duration_seconds
 - Use CPU mode for large models
 - Close other applications
 - Try lower CFG scales (3.0-5.0)
+- Ensure you have at least 6GB VRAM for optimal performance
+
+**Audio Processing Errors**:
+- Verify ffmpeg is properly installed and in PATH
+- Check that libsndfile is installed (Linux/macOS)
+- For LUFS normalization issues, ensure `pyloudnorm` is installed
 
 ## 🤝 Contributing
 
@@ -265,13 +308,12 @@ MIT License - see LICENSE file for details.
 - **🎨 Audio Inpainting**: Fill gaps or replace sections in existing audio with AI-generated content
 - **🔧 LoRA Training**: Lightweight fine-tuning for custom audio styles and characteristics
 - **🎓 Full Fine-tune Training**: Complete model training pipeline for custom datasets and specialized audio domains
-- **🎛️ Advanced Audio Editing**: Real-time audio manipulation and enhancement tools
-- **🎵 Extended Model Support**: Integration with additional AudioX model variants and architectures
+- **� Extended Model Support**: Integration with additional AudioX model variants and architectures
 
 ### Development Timeline
 - **Phase 1** (Current): Enhanced conditioning and professional audio processing ✅
 - **Phase 2** (Next): Audio inpainting capabilities and LoRA training infrastructure
-- **Phase 3** (Future): Full fine-tuning pipeline and advanced editing tools
+- **Phase 3** (Future): Full fine-tuning pipeline and extended model support
 
 We welcome community feedback and contributions to help prioritize these features!
 
