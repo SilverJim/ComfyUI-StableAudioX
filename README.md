@@ -50,23 +50,23 @@ pip install -r requirements.txt
 python install_dependencies.py
 ```
 
-### 3. Download Models
-**Important**: You must download the AudioX model and config files manually from Hugging Face:
+### Model Setup – AudioX
 
-#### Stable Audio Open 1.0 (Recommended)
-1. **Model File**: Download from [Hugging Face - model.safetensors](https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/model.safetensors)
-2. **Config File**: Download from [Hugging Face - model_config.json](https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/model_config.json)
-3. **Place both files** in: `ComfyUI/models/diffusion_models/`
+1. **Model File**: Download from [Hugging Face - model.ckpt](https://huggingface.co/HKUSTAudio/AudioX/resolve/main/model.ckpt)
+2. **Config File**: Download from [Hugging Face - config.json](https://huggingface.co/HKUSTAudio/AudioX/resolve/main/config.json)
+3. **Place both files** in:
+   `ComfyUI/models/diffusion_models/` 
+rename model.ckpt file to AudioX.ckpt
 
-#### Alternative Download Methods
-**Using Hugging Face CLI:**
+#### Alternative Download via Hugging Face CLI
+
 ```bash
 # Install huggingface-hub if not already installed
 pip install huggingface-hub
 
-# Download the model (requires accepting license on HF)
-huggingface-cli download stabilityai/stable-audio-open-1.0 model.safetensors --local-dir ComfyUI/models/diffusion_models/
-huggingface-cli download stabilityai/stable-audio-open-1.0 model_config.json --local-dir ComfyUI/models/diffusion_models/
+# Download AudioX model files
+huggingface-cli download HKUSTAudio/AudioX model.ckpt --local-dir ComfyUI/models/diffusion_models/
+huggingface-cli download HKUSTAudio/AudioX config.json --local-dir ComfyUI/models/diffusion_models/
 ```
 
 **Model Directory Structure:**
