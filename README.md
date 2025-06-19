@@ -1,6 +1,6 @@
 # ComfyUI-AudioX
 
-A powerful audio generation extension for ComfyUI that integrates AudioX models a finetuned version of stable audio tools for high-quality audio synthesis from text and video inputs. Currently only working on min. 16gb Vram. tested on a single 4090,
+A powerful audio generation extension for ComfyUI that integrates AudioX models a finetuned version of stable audio tools for high-quality audio synthesis from text and video inputs. Currently only working on min. 16gb Vram - tested on a single 4090,
 
 ## 🎵 Features
 
