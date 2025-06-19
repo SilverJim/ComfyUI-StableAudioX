@@ -1,6 +1,6 @@
 # ComfyUI-AudioX
 
-A powerful audio generation extension for ComfyUI that integrates AudioX models for high-quality audio synthesis from text and video inputs.
+A powerful audio generation extension for ComfyUI that integrates AudioX models a finetuned version of stable audio tools for high-quality audio synthesis from text and video inputs.
 
 ## 🎵 Features
 
@@ -56,6 +56,7 @@ python install_dependencies.py
 2. **Config File**: Download from [Hugging Face - config.json](https://huggingface.co/HKUSTAudio/AudioX/resolve/main/config.json)
 3. **Place both files** in:
    `ComfyUI/models/diffusion_models/` 
+
 rename model.ckpt file to AudioX.ckpt
 
 #### Alternative Download via Hugging Face CLI
@@ -72,22 +73,9 @@ huggingface-cli download HKUSTAudio/AudioX config.json --local-dir ComfyUI/model
 **Model Directory Structure:**
 ```
 ComfyUI/models/diffusion_models/
-├── model.safetensors         # Stable Audio Open 1.0 model
+├── model.safetensors         # AudioX model
 └── model_config.json         # Model configuration file
 ```
-
-**Note**: You need to accept the license agreement on the Hugging Face model page before downloading.
-
-## 🎵 Model Information
-
-### Stable Audio Open 1.0 Specifications
-- **Model Size**: 1.21B parameters
-- **Audio Quality**: Up to 47 seconds, stereo, 44.1kHz
-- **Input**: Text prompts in English
-- **License**: Stability AI Community License (commercial use requires separate license)
-- **Capabilities**: Sound effects, field recordings, some music generation
-- **Limitations**: Not suitable for realistic vocals, better for sound effects than complex music
-
 ### System Requirements
 - **VRAM**: 6GB+ recommended for optimal performance
 - **RAM**: 16GB+ recommended
