@@ -1,0 +1,67 @@
+# Essential dependencies for AudioX
+torch>=2.0.0
+torchaudio>=2.0.0
+transformers>=4.30.0
+huggingface_hub>=0.16.0
+einops>=0.6.0
+einops-exts>=0.0.4
+numpy>=1.21.0
+safetensors>=0.3.0
+
+# Audio processing and utilities
+librosa>=0.9.0
+soundfile>=0.10.0
+descript-audio-codec>=1.0.0
+pyloudnorm>=0.1.0
+
+# ComfyUI compatibility
+Pillow>=8.0.0
+
+# EMA utilities for model training
+ema_pytorch>=0.3.0
+
+# Transformer and attention mechanisms
+x-transformers>=1.0.0
+local-attention>=1.8.0
+
+# Audio-specific neural network components
+alias-free-torch>=0.0.6
+vector-quantize-pytorch>=1.0.0
+
+# Diffusion and generation
+k-diffusion>=0.1.0
+v-diffusion-pytorch>=0.0.2
+
+# Audio codecs and processing
+encodec>=0.1.1
+auraloss>=0.4.0
+
+# CLAP for audio-text understanding
+laion-clap>=1.1.0
+
+# Utilities
+aeiou
+prefigure>=0.0.9
+
+
+
+# Optional dependencies (install manually if needed):
+# Video processing (for advanced video workflows)
+# decord>=0.6.0
+# torchvision>=0.15.0
+
+# Advanced audio processing (may be slow to install)
+# pedalboard>=0.7.0
+
+# Phoneme conditioning (for advanced text processing)
+# g2p_en>=2.1.0
+
+# Dataset handling (for training workflows)
+# webdataset>=0.2.0
+
+# Flash attention (optional - often fails on Windows, may improve performance)
+# flash-attn>=2.0.0
+
+# Note: All core dependencies above are required for basic AudioX functionality.
+# The enhanced conditioning features, volume controls, and professional audio
+# processing capabilities are included in the core dependencies.
