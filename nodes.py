@@ -1603,7 +1603,9 @@ class AudioXVideoAudioCombiner:
             info = (f"Video: {num_frames} frames ({video_duration:.2f}s), "
                    f"Audio: {final_audio_duration:.2f}s, "
                    f"Sample Rate: {sample_rate}Hz")
-
+            
+            synced_audio = synced_audio.detach().cpu()
+            
             return (video, synced_audio, info)
 
         except Exception as e:
