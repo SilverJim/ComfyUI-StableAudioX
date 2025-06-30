@@ -1604,7 +1604,7 @@ class AudioXVideoAudioCombiner:
                    f"Audio: {final_audio_duration:.2f}s, "
                    f"Sample Rate: {sample_rate}Hz")
             
-            synced_audio = synced_audio.detach().cpu()
+            synced_audio['waveform'] = synced_audio['waveform'].detach().cpu()
             
             return (video, synced_audio, info)
 
